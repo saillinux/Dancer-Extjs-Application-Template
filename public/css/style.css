@@ -1,0 +1,48 @@
+/*Interface Styling*/
+
+#body,#slider {
+height:100%;
+overflow:hidden;
+}
+
+#body {
+background:#fff;
+font:86% Arial, sans-serif;
+margin:0;
+}
+
+#slider {
+position:absolute;
+z-index:0;
+}
+
+#holster h1,#holster p {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#111;
+bottom:30px;
+left:10px;
+}
+
+#logo {
+text-indent:-900px;
+display:block;
+width:215px;
+height:65px;
+background-image:url(../images/logo.png);
+background-position:-6px 0;
+bottom:70px!important;
+}
+
+#no-flash {
+position:absolute;
+z-index:1;
+top:10px;
+left:10px;
+}
+
+.object {
+position:absolute!important;
+display:block!important;
+z-index:1!important;
+}

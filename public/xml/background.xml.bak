@@ -1,0 +1,131 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+
+<bg>	
+	
+	<navi>
+		
+		<color>0x666666</color>		<!-- NORMAL COLOR OF THE NAVIGATION BULLETS -->
+		<color>0x9F0000</color>		<!-- ROLLOVER COLOR OF THE NAVIGATION BULLETS -->
+		
+		<x>-5</x>					<!-- THE NAVIGATION POSITIONING ON X AXIS FORM THE RIGHT SIDE OF THE SCREEN -->
+		<y>15</y>					<!-- THE NAVIGATION POSITIONING ON Y AXIS -->
+		<spacer>5</spacer>			<!-- SPACE BETWEEN THE NAVIGATION BULLETS -->
+			
+	</navi>
+
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- THE ARRANGEMENT PART OF THE XML FILE. HERE YOU CHOOSE WHAT KIND OF CONTENT TO DISPLAY AND IN WHAT ORDER. -->
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+	<section>	
+		<!--<navi>on</navi>-->				<!-- NAVIGATION BULLETS ON/OFF -->
+		<autoplay>off</autoplay>		<!-- SLIDESHOW ON/OFF -->
+		<id>2</id>
+		<!--<id>6</id>-->
+		<!--<id>5</id>-->					<!-- THE 5TH CONTENT WILL PLAY FIRST. REMEMBER! COUNTING STARTS WITH 0. -->
+		<!--<id>0</id>-->					<!-- THE 1ST CONTENT WILL FOLLOW. -->
+		<!--<id>3</id>-->				
+		<!--<id>1</id>-->				
+		<!--<id>4</id>-->
+	</section>
+	
+	
+	<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- THE CONTENT PART OF THE XML FILE. HERE YOU CHOOSE WHAT TYPE OF CONTENT WILL BE LOADED. -->
+	<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+	 
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/01.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>center</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>	
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/02.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>top</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>	
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/03.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>center</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>	
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/04.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>top</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/05.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>center</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>	
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/06.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>center</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>
+	
+	<item>
+		<type>image</type>							<!-- TYPE OF THE CONTENT FILE -->
+		<delay>5</delay>							<!-- HOW MANY SECONDS WILL DISPLAY IT -->
+		<path>background/07.jpg</path>				<!-- THE PATH TO THE BACKGROUND FILE. IT CAN BE IMAGE,SWF OR VIDEO. -->
+		<resize>scale</resize>						<!-- THE SCALE VALUE WILL MAINTAIN ASPECT RATIO AND MAKE IT FULLSCREEN. CHOOSE VALUES LIKE SCALE/FIT/STRETCH/NONE -->
+		<verticalalign>top</verticalalign>		<!-- TOP/CENTER/BOTTOM -->
+		<horizontalalign>center</horizontalalign>	<!-- LEFT/CENTER/RIGHT -->
+		<alpha>1</alpha>							<!-- 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<!--<effectpattern>background/patterns/pattern3.png</effectpattern>//-->		<!-- SELECT THE PATH TO A PNG PATTERN -->
+		<effectalpha>0.5</effectalpha>										<!-- ALPHA OF THE PATTERN. 0 = INVISIBLE / 1 = FULL OPACITY -->
+		<smoothing>1</smoothing>  											<!-- 0 = TRUE / 1 = FALSE -->		
+	</item>	
+	<!-- /// -->
+	<!-- END -->
+	<!-- /// -->
+	
+</bg>

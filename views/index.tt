@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	<!-- js: extjs -->
+	<script type="text/javascript" src="extjs/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="extjs/ext-all.js"></script>	
+	<script type="text/javascript" src="js/extjs.glb.variables.js"></script>
+	<script type="text/javascript" src="js/extjs.cst.functions.js"></script>
+	<script type="text/javascript" src="js/extjs.cst.functions.authentication.js"></script>	
+
+	<!-- js: flash bg -->
+	<script type="text/javascript" src="swfobject.js"></script>
+
+	<!-- js: inline -->
+        <script language="javascript"> 
+	Ext.onReady(function() {
+	    Ext.QuickTips.init();
+	    
+	    // Define Functions
+	    var fnc_register = function() {
+		register.getForm().submit({
+		    method: 'POST',
+		    waitTitle: 'Connecting',
+		    waitMsg: 'Sending Registration Information...',
+     
+		    success: function() {
+			Ext.Msg.alert('Status',
+			
+			    "Registration successful, \n" +
+			    "Please check your email for a confirmation message. \n" +
+			    "Follow the instructions in the email before using this system!",
+			    
+			function(btn, text) {
+			    if (btn == 'ok') {
+				register.getForm().reset();
+				fnc_show_login();
+			    }
+			});
+		    },
+     
+		    failure: function(form, action) {
+			if (action.failureType == 'server') {
+			    obj = Ext.util.JSON.decode(action.response.responseText);
+			    Ext.Msg.alert('Login Failed!', obj.error.reason);
+			} else {
+			    Ext.Msg.alert('Warning!', 'Authentication server is unreachable : ' + action.response.responseText);
+			}
+		    }
+		});
+	    };
+	    
+	    var fnc_forgot_credentials = function () {
+		Ext.Msg.alert('Status', 'Contact support for help with your login?', function(btn, text) {
+		    if (btn == 'ok') {
+			var redirect = 'mailto:support@localhost?subject=I can\'t remember what my login is...';
+			window.location.href = redirect;
+		    }
+		});
+	    };
+	    
+	    var fnc_show_login = function () {
+		Ext.getCmp('register').hide();
+		Ext.getCmp('login').show();
+		win.setHeight(165);
+		win.doLayout();
+	    };
+	    
+	    var fnc_show_registration = function () {
+		Ext.getCmp('register').show();
+		Ext.getCmp('login').hide();
+		win.setHeight(245);
+		win.doLayout();
+	    };
+	    
+	    // Define Buttons
+	    var btn_register = {
+		text: 'Register',
+		formBind: true,
+		handler: function(){ fnc_register() }
+	    };
+	    
+	    var btn_login    = {
+		text: 'Login',
+		formBind: true,
+		style: {
+		    margin: '0px -7px 0px 2px',
+		},
+		handler: function(){ fnc_login(login, win) }
+	    };
+	    
+	    var btn_alt_login = {
+		text: 'Return to Login',
+		handler: function () { fnc_show_login() },
+		style: {
+		    margin: '0px -7px 0px 2px',
+		},
+	    };
+	    
+	    var btn_alt_register = {
+		text: 'Register Account?',
+		handler: function () { fnc_show_registration() },
+		style: {
+		    margin: '0px -7px',
+		},
+	    };
+	    
+	    var btn_alt_forgot = {
+		text: 'Forgot Credentials?',
+		handler: function(){ fnc_forgot_credentials() },
+		style: {
+		    margin: '0px 7px',
+		}
+	    };
+	    
+	    // Define Forms
+	    var login = new Ext.form.FormPanel({
+		id: 'login',
+		labelWidth: 60,
+		url: fnc_url('/service/login.json'),
+		frame: true,
+		title: 'Project Perspective v.0+ Login',
+		monitorValid: true,
+		defaults: {
+		    xtype: 'textfield'
+		},
+		items: [{
+		    fieldLabel: 'Login',
+		    name: 'login',
+		    allowBlank: false,
+		    anchor: '100%'
+		},
+		{
+		    fieldLabel: 'Password',
+		    name: 'password',
+		    inputType: 'password',
+		    allowBlank: false,
+		    anchor: '100%'
+		}],
+		buttons: [btn_login]
+	    });
+	    
+	    var register = new Ext.form.FormPanel({
+		id: 'register',
+		hidden: true,
+		labelWidth: 60,
+		url: 'http://localhost:8080/service/register',
+		frame: true,
+		title: 'Project Perspective v.0+ Registration',
+		monitorValid: true,
+		defaults: {
+		    xtype: 'textfield'
+		},
+		items: [
+		    {
+			fieldLabel: 'Full Name',
+			name: 'name',
+			allowBlank: false,
+			anchor: '100%',
+			vtype: 'fullName'
+		    },
+		    {
+			fieldLabel: 'Email',
+			name: 'email',
+			allowBlank: false,
+			anchor: '100%',
+			vtype: 'email'
+		    },
+		    {
+			fieldLabel: 'Login',
+			name: 'login',
+			allowBlank: false,
+			anchor: '100%',
+			vtype: 'login'
+		    },
+		    {
+			fieldLabel: 'Password',
+			id: 'password',
+			name: 'password',
+			inputType: 'password',
+			allowBlank: false,
+			anchor: '100%',
+			vtype: 'password'
+		    },
+		    {
+			fieldLabel: 'Password',
+			id: 'password_cfm',
+			name: 'password_cfm',
+			inputType: 'password',
+			allowBlank: false,
+			anchor: '100%',
+			vtype: 'cmpPassword',
+			cmpPassword: 'password'
+		    }
+		],
+		buttons: [btn_register, btn_alt_login]
+	    });
+	    
+	    var win = new Ext.Window({
+		id: 'win',
+		layout: 'fit',
+		width: 500,
+		height: 165,
+		closable: false,
+		resizable: false,
+		plain: true,
+		border: false,
+		items: [login, register],
+		buttonAlign: 'left',
+		buttons: [
+		   btn_alt_register, btn_alt_forgot
+		]
+	    });
+	    new Ext.Viewport({});
+	    win.show();
+	});
+	</script>
+	<script language="javascript"> 
+        Ext.onReady(function() {
+            // custom Vtype for vtype:'fullName'
+            Ext.apply(Ext.form.VTypes, {
+                fullName:  function(v) {
+                    return /^[a-zA-Z\s\.\,]+$/.test(v);
+                },
+                fullNameText: 'Must be a valid name for an individual person.',
+                fullNameMask: /[a-zA-Z\s\.\,]/i
+            });
+            // custom Vtype for vtype:'login'
+            Ext.apply(Ext.form.VTypes, {
+                login:  function(v) {
+                    return /^[\w\W]{3,}$/.test(v);
+                },
+                loginText: 'Must be at least 3 characters.',
+                //loginMask: //i
+            });
+            // custom Vtype for vtype:'password'
+            Ext.apply(Ext.form.VTypes, {
+                password:  function(v) {
+                    return /^[\w\W]{3,}$/.test(v);
+                },
+                passwordText: 'Must be at least 3 characters.',
+                //passwordMask: //i
+            });
+            // custom Vtype for vtype:'cmpPassword'
+            Ext.apply(Ext.form.VTypes, {
+                cmpPassword:  function(v, f) {
+                    if (f.cmpPassword) {
+                        var other = Ext.getCmp(f.cmpPassword).getValue();
+                        return (v == other);
+                    } else {
+                        return true;
+                    }
+                },
+                cmpPasswordText: 'Please ensure all password fields are identical.',
+                //passwordMask: //i
+            });
+        });
+        </script> 
+	<script type="text/javascript">
+	//<![CDATA[		 
+		var flashvars = {};
+		var params = {
+			bgcolor : "#000000",
+			allowFullScreen : "true",
+			scale :"noscale",
+			allowScriptAccess : "always",
+			swLiveConnect : "true",
+			wmode: "transparent"
+		};
+		var attributes = {};
+		swfobject.embedSWF("preview.swf", "slider", "100%", "100%", "9.0.0", "expressInstall.swf", flashvars, params, attributes);
+	//]]>
+	</script>
+</head>
+<body id="body">
+	<div id="slider">
+		<p id="no-flash"><a href="http://www.adobe.com/go/getflashplayer" target="_blank">Adobe Flash Player Needed To View This Site, Click Here!</a></p>
+	</div>
+	<div id="holster">
+		<div>
+			<h1 id="logo" class="object">Welcome to Atoms 6...</h1>
+			<p  id="desc" class="object">
+				<br/>
+				<span>Welcome to Atoms v6 / Asset Tracking and Operations Management System</span><br/>
+				<span class="mark">&copy 2010 Al Newkirk / PA Leadership Charter School - www.palcs.org / 610&nbsp;701&nbsp;3333</span><br/>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bg>
+	<!-- /// -->
+	<!-- begin -->
+	<!-- /// -->
+	
+	<navi>	
+		<color>0x666666</color><!-- normal color of the navigation bullets -->
+		<color>0x9F0000</color><!-- rollover color of the navigation bullets -->
+		<x>-5</x><!-- the navigation positioning on x axis form the right side of the screen -->
+		<y>15</y><!-- the navigation positioning on y axis -->
+		<spacer>5</spacer><!-- space between the navigation bullets -->
+	</navi>
+	
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- the arrangement part of the xml file. here you choose what kind of content to display and in what order. -->
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+	<section>	
+		<navi>off</navi><!-- navigation bullets on/off -->
+		<autoplay>off</autoplay><!-- slideshow on/off -->
+		<id>0</id><!-- the 5th content will play first. remember! counting starts with 0. -->
+		<!--
+		<id>0</id>
+		<id>3</id>
+		<id>1</id>
+		<id>4</id>
+		-->
+	</section>
+	
+	<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- the content part of the xml file. here you choose what type of content will be loaded. -->
+	<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+	 
+	<item>
+		<type>image</type>						<!-- type of the content file -->
+		<delay>5</delay>						<!-- how many seconds will display it -->
+		<path>background/splash.jpg</path>					<!-- the path to the background file. it can be image,swf or video. -->
+		<resize>scale</resize>						<!-- the scale value will maintain aspect ratio and make it fullscreen. choose values like scale/fit/stretch/none -->
+		<verticalalign>top</verticalalign>				<!-- top/center/bottom -->
+		<horizontalalign>center</horizontalalign>			<!-- left/center/right -->
+		<alpha>1</alpha>						<!-- 0 = invisible / 1 = full opacity -->
+		<effectpattern>background/patterns/pattern5.png</effectpattern>	<!-- select the path to a png pattern -->
+		<effectalpha>0.5</effectalpha>					<!-- alpha of the pattern. 0 = invisible / 1 = full opacity -->
+		<smoothing>1</smoothing>					<!-- 0 = true / 1 = false -->		
+	</item>	
+	
+	<!-- /// -->
+	<!-- end -->
+	<!-- /// -->
+	
+</bg>
